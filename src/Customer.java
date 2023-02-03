@@ -31,7 +31,16 @@ public class Customer {
     }
 
     public void setName (String name) {
-        this.name = name;
+        if (name.equals(null) || name.contains("1") || name.contains("2")) {
+
+            throw  new IllegalArgumentException("Dont use numbers or illegal characters in your name");
+        }
+
+        else {
+
+            this.name = name;
+
+        }
 
     }
 

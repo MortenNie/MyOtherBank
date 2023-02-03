@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -7,6 +8,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class RegularAccountTest {
     Customer morten = new Customer("Morten", Status.REGULAR, new ArrayList<>());
     BankAccount account1 = new SalaryAccount(10000, morten, -10000);
+
+    @BeforeEach
+    void beforeeach() {
+        account1.balance = 10000;
+
+    }
+
     @Test
     void deposit() {
         account1.deposit(4000);
